@@ -1,0 +1,63 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    .title {
+      text-decoration: underline;
+    }
+    .list {
+      list-style: none;
+    }
+  </style>
+</head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <!--<script src="jq2-21.js"></script>-->
+  <script>
+  $(function(){
+    //課題２
+     $("#btn1").on("click", function() {
+      $("#spn2").text($("#index").text());
+      });
+     $("#btn2").on("click", function() {
+      $("#spn2").text($("#index").html());
+      });
+
+    // 課題３
+    $("ul#index").append("<li>メソッド</li>");
+
+    //課題４
+    $('#index').find('li').each(function() {
+   // ループ内の処理
+   //alert($(this).text().length);
+   //文字列をつくっているだけ
+   var str =  $(this).text() + "[" + ($(this).text().length) + "文字]";
+   //↓引数に代入する
+   $(this).text(str);
+    });
+
+  });
+   </script>
+
+  <h1>jQueryの基本</h1>
+  <h2>HTML/CSSとJavaScriptの基本的な構文について理解していること</h2>
+  <ul id="index" class="list">
+    <li>jQueryのはじめ方</li>
+    <li>セレクタ</li>
+    <li>css</li>
+  </ul>
+
+    <button id="btn1">textメソッド</button>
+  　<button id="btn2">htmlメソッド</button>
+<div>
+    <span id="spn2">　</span>
+</div>
+
+<!--
+<div>
+  <input type="button" id="btn1" value="html()で取得" style="color:blue;">
+　<input type="button" id="btn2" value="text()で取得" style="color:red;">
+</div>
+-->
+</body>
+</html>
